@@ -1,0 +1,1 @@
+﻿Get-Mailbox MailboxName -resultsize "Unlimited" | Get-MailboxPermission | where { ($_.AccessRights -eq "FullAccess") -and ($_.IsInherited -eq $false) -and -not ($_.User -like "NT AUTHORITY\SELF") } | ft Identity, User -AutoSize

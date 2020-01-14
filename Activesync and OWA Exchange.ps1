@@ -1,0 +1,1 @@
+﻿Get-CasMailbox -Filter {OWAEnabled -eq $true} | Where-Object { $_.DistinguishedName -LIKE "*" } | Select-Object DisplayName, ActiveSync*, OWA* |# Export-CSV "UNC"

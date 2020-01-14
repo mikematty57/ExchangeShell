@@ -1,0 +1,2 @@
+﻿$UserList = Get-CASMailbox -Filter {hasactivesyncdevicepartnership -eq $true -and -not displayname -like "CAS_{*"} | Get-Mailbox 
+$UserList | foreach { Get-ActiveSyncDeviceStatistics -Mailbox $_} | Export-Csv "UNC"
